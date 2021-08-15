@@ -118,7 +118,7 @@ SSH into the control node and follow the steps below:
 
 - The playbook is the file that is copied to the ansible container (jump box), where the play is run and installed across the machines.
 - The playbook config file is updated to ensure that the playbook runs on a specific machine.
-- In order to check data head to <ELK IP>:5601/app/kibana#
+- In order to check data head to YOUR.ELK.IP.ADDRESS:5601/app/kibana#
 
 
 
