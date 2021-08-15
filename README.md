@@ -10,7 +10,9 @@ Playbook files:
 - [Web Playbook](./Ansible/ansible-playbook.yml)
 - [ELK Playbook](./Ansible/install-elk.yml)
 - [Filebeat Playbook](./Ansible/filebeat-playbook.yml)
+- [Filebeat Config](./Ansible/filebeat-config.yml)
 - [Metricbeat Playbook](./Ansible/metricbeat-playbook.yml)
+- [Metricbeat Config](./Ansible/metricbeat-config.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -18,7 +20,7 @@ This document contains the following details:
 - ELK Configuration
   - Beats in Use
   - Machines Being Monitored
-- How to Use the Ansible Build
+- How to use the Ansible Build
 
 ---  
 
@@ -120,19 +122,27 @@ SSH into the control node and follow the steps below:
 - The playbook config file is updated to ensure that the playbook runs on a specific machine.
 - In order to check data head to YOUR.ELK.IP.ADDRESS:5601/app/kibana#
 
+---
 
+### Commands when installing the containers
 
+Assuming you are able to ssh into the jump box, these are the commands you will be running.
 
+- Jump Box
+  - sudo docker ps (this will give you the name of your docker container)
+  - sudo docker start 'nameofdockercontainer'
+  - sudo docker attach 'nameofdockercontainer'
 
+- From here you will be you will be setting up and running your playbooks in /etc/ansible/ directory. Assuming you have installed the config files also run;
+  - ansible-playbook ./ansible-playbook.yml
+  - ansible-playbook ./filebeat-playbook.yml
+  - ansible-playbook ./metricbeat-playbook.yml
+  - ansible-playbook ./install-elk.yml
 
-
-
-
-
-
-
-
-
+- Now you can check that all the containers have filebeat and metricbeat installed and the elk container is running properly. To do this;
+  - ssh adminname@elk.ip.address
+  - sudo docker ps
+- This will return the ELK docker name now go to YOUR.ELK.IP.ADDRESS:5601/app/kibana# to see that logs are being sent to Kibana from metricbeat and filebeat.
 
 
 
