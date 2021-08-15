@@ -2,7 +2,7 @@
 This is documentation on a project I completed where I built a cloud-based solution that uses ELK stack monitoring for vulnerable web applications.
 The files in this repository were used to configure the network depicted below.
 
-![Network Topology](./images/networktopology.png)
+![Network Topology](./images/networktopology.PNG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -77,7 +77,7 @@ The ELK playbook implements the following tasks:
 - Download and install docker elk container with published ports '5601,9200,5044': This allocates the ports that the docker elk container will use.
 - Enable service docker on boot: This will allow Elk to boot up on startup.
 
-![ELK](./images/elk-capture.png)
+![ELK](./images/elk-capture.PNG)
 
 This screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
